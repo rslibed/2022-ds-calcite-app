@@ -14,6 +14,6 @@ Learn how you can design a better user experience more efficiently by forming a 
 
 1. `git clone https://github.com/rslibed/2022-ds-calcite-app.git` \*
 2. `cd 2022-ds-calcite-app` \*
-3. Open in your IDE.
+3. Open project in your IDE.
 4. `npm install` \*
 5. `npm start` \*
