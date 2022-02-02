@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg" href="/favicon.svg" />
+    <title>
+      2022 Esri Developer Summit: Building Web Apps with ArcGIS API for
+      JavaScript and Calcite Design System
+    </title>
+  </head>
+  <body>
+    <calcite-shell>
+      <header slot="header">
+        <h1>2022 Esri Developer Summit: Layer Effects Sample</h1>
+      </header>
+      <calcite-shell-panel slot="primary-panel" position="start">
+        <div id="layerEffectsWidget">
+          /** Layer Effects built with calcite components **/
+        </div>
+      </calcite-shell-panel>
+      <div id="viewDiv"></div>
+    </calcite-shell>
+    <script type="module" src="/src/app/init.ts"></script>
+  </body>
+</html>

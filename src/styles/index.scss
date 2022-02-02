@@ -1,0 +1,8 @@
+// Calcite components styles
+@import "../../node_modules/@esri/calcite-components/dist/calcite/calcite.css";
+
+// 4.x ArcGIS API For JavaScript (@arcgis/core) styles
+@import "../../node_modules/@arcgis/core/assets/esri/themes/light/main.css";
+
+// App styles
+@import "./App.scss";
