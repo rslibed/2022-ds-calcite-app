@@ -2,7 +2,7 @@
 
 Sample app for "Building Web Apps with ArcGIS API for JavaScript and Calcite Design System" session at 2022 Esri Developer Summit.
 
-## Session details:
+## Session details
 
 ### Building Web Apps with ArcGIS API for JavaScript and Calcite Design System
 
