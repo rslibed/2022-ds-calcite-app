@@ -20,14 +20,18 @@ Learn how you can design a better user experience more efficiently by forming a 
 
 ## Sample app preview
 
-### Default theme:
+### Theme
+
+#### Default:
 ![Default theme](https://github.com/rslibed/2022-ds-calcite-app/blob/master/public/static/img/default-theme.png)
 
-### Custom theme:
-![Default theme](https://github.com/rslibed/2022-ds-calcite-app/blob/master/public/static/img/custom-theme.png)
+#### Custom:
+![Custom theme](https://github.com/rslibed/2022-ds-calcite-app/blob/master/public/static/img/custom-theme.png)
 
-### Default internationalization:
-![Default theme](https://github.com/rslibed/2022-ds-calcite-app/blob/master/public/static/img/default-intl.png)
+### Internationalization
 
-### Custom internationalization:
-![Default theme](https://github.com/rslibed/2022-ds-calcite-app/blob/master/public/static/img/custom-intl.png)
+#### Default:
+![Default internationalization](https://github.com/rslibed/2022-ds-calcite-app/blob/master/public/static/img/default-intl.png)
+
+#### Custom:
+![Custom internationalization](https://github.com/rslibed/2022-ds-calcite-app/blob/master/public/static/img/custom-intl.png)
