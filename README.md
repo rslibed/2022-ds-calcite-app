@@ -17,3 +17,21 @@ Learn how you can design a better user experience more efficiently by forming a 
 3. Open project in your IDE.
 4. `npm install` \*
 5. `npm start` \*
+
+## Sample app preview
+
+### Theme
+
+#### Default:
+![Default theme](https://github.com/rslibed/2022-ds-calcite-app/blob/master/public/static/img/default-theme.png)
+
+#### Custom:
+![Custom theme](https://github.com/rslibed/2022-ds-calcite-app/blob/master/public/static/img/custom-theme.png)
+
+### Internationalization
+
+#### Default:
+![Default internationalization](https://github.com/rslibed/2022-ds-calcite-app/blob/master/public/static/img/default-intl.png)
+
+#### Custom:
+![Custom internationalization](https://github.com/rslibed/2022-ds-calcite-app/blob/master/public/static/img/custom-intl.png)
