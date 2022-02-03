@@ -21,6 +21,7 @@ class App {
     this.initCalciteComponents();
     this.configurePortalUrl();
     this.initMap();
+    this.setupModalEventListener();
   }
 
   // Initialize calcite components
@@ -49,6 +50,35 @@ class App {
       map
     });
     view.scale = 70000000;
+  }
+
+  // Calcite Modal set up
+  setupModalEventListener() {
+    const modal = document.querySelector(
+      "calcite-modal"
+    ) as HTMLCalciteModalElement;
+
+    const launchBtn = document.getElementById(
+      "launchBtn"
+    ) as HTMLCalciteButtonElement;
+    const confirmBtn = document.getElementById(
+      "confirmBtn"
+    ) as HTMLCalciteButtonElement;
+    const cancelBtn = document.getElementById(
+      "cancelBtn"
+    ) as HTMLCalciteButtonElement;
+
+    launchBtn.onclick = () => this.openModal(modal);
+    confirmBtn.onclick = () => this.closeModal(modal);
+    cancelBtn.onclick = () => this.closeModal(modal);
+  }
+
+  openModal(modal: HTMLCalciteModalElement): void {
+    modal?.setAttribute("active", "");
+  }
+
+  closeModal(modal: HTMLCalciteModalElement): void {
+    modal?.removeAttribute("active");
   }
 }
 

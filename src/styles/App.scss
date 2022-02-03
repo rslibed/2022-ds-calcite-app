@@ -14,4 +14,19 @@ calcite-shell {
       font-size: 20px;
     }
   }
+
+  calcite-shell-panel {
+    display: flex;
+    justify-content: center;
+    height: 100%;
+
+    calcite-panel {
+      #content {
+        display: flex;
+        flex-direction: column;
+        padding: 4%;
+        height: 100%;
+      }
+    }
+  }
 }
