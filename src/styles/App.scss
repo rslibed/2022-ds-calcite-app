@@ -1,32 +1,11 @@
 html,
-body,
-#viewDiv {
+body {
   padding: 0;
   margin: 0;
   height: 100%;
   width: 100%;
 }
 
-calcite-shell {
-  header {
-    padding-left: 10px;
-    h1 {
-      font-size: 20px;
-    }
-  }
-
-  calcite-shell-panel {
-    display: flex;
-    justify-content: center;
-    height: 100%;
-
-    calcite-panel {
-      #content {
-        display: flex;
-        flex-direction: column;
-        padding: 4%;
-        height: 100%;
-      }
-    }
-  }
+#viewDiv {
+  height: 95%;
 }
