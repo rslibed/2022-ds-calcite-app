@@ -21,7 +21,6 @@ class App {
     this.initCalciteComponents();
     this.configurePortalUrl();
     this.initMap();
-    this.setupModalEventListener();
   }
 
   // Initialize calcite components
@@ -45,40 +44,73 @@ class App {
         id: webmap
       }
     });
+
+    const searchParams = new URL(window.location.href).searchParams as any;
+
+    const { center, zoom } = this.getExtentConfig(searchParams);
+
     const view = new MapView({
       container: "viewDiv",
-      map
+      map,
+      center,
+      zoom
     });
-    view.scale = 70000000;
+
+    if (!zoom) {
+      view.scale = 70000000;
+    }
+
+    this.handleSelectedFeature(view, searchParams);
   }
 
-  // Calcite Modal set up
-  setupModalEventListener() {
-    const modal = document.querySelector(
-      "calcite-modal"
-    ) as HTMLCalciteModalElement;
+  getExtentConfig(searchParams) {
+    const center = searchParams.get("center")
+      ? searchParams
+          .get("center")
+          .split(";")
+          .map(val => parseFloat(val))
+      : null;
+    const zoom = (
+      searchParams.get("level") ? parseInt(searchParams.get("level")) : null
+    ) as number;
 
-    const launchBtn = document.getElementById(
-      "launchBtn"
-    ) as HTMLCalciteButtonElement;
-    const confirmBtn = document.getElementById(
-      "confirmBtn"
-    ) as HTMLCalciteButtonElement;
-    const cancelBtn = document.getElementById(
-      "cancelBtn"
-    ) as HTMLCalciteButtonElement;
-
-    launchBtn.onclick = () => this.openModal(modal);
-    confirmBtn.onclick = () => this.closeModal(modal);
-    cancelBtn.onclick = () => this.closeModal(modal);
+    return {
+      center,
+      zoom
+    };
   }
 
-  openModal(modal: HTMLCalciteModalElement): void {
-    modal?.setAttribute("active", "");
-  }
+  handleSelectedFeature(view, searchParams) {
+    const iaSocialShare = document.querySelector(
+      "instant-apps-social-share"
+    ) as HTMLInstantAppsSocialShareElement;
+    iaSocialShare.view = view;
 
-  closeModal(modal: HTMLCalciteModalElement): void {
-    modal?.removeAttribute("active");
+    const selectedFeature = searchParams.get("selectedFeature")
+      ? searchParams.get("selectedFeature").split(";")
+      : null;
+    const selectedFeatureLayerId = selectedFeature ? selectedFeature[0] : null;
+    const selectedFeatureOID = selectedFeature
+      ? parseInt(selectedFeature[1])
+      : null;
+
+    view.map.loadAll().then(loadedMap => {
+      if (selectedFeature) {
+        const selectedLayer = loadedMap.allLayers.find(
+          layer => selectedFeatureLayerId === layer.id
+        ) as __esri.FeatureLayer;
+        const query = selectedLayer.createQuery();
+        query.objectIds = [selectedFeatureOID as number];
+        selectedLayer.queryFeatures(query).then(featureRes => {
+          const feature = featureRes.features[0];
+          view.goTo(feature).then(() => {
+            view.popup.open({
+              features: [feature]
+            });
+          });
+        });
+      }
+    });
   }
 }
 
