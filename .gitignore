@@ -1,5 +1,5 @@
-node_modules
+social-share/node_modules
 dist
 build
-public/assets
-.DS_Store
+social-share/public/assets
+social-share/.DS_Store
