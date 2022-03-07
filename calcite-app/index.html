@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg" href="/favicon.svg" />
+    <title>
+      2022 Esri Developer Summit: Building Web Apps with ArcGIS API for
+      JavaScript and Calcite Design System
+    </title>
+  </head>
+  <!-- Custom theme class name: custom-theme -->
+  <body>
+    <!-- Calcite shell -->
+    <calcite-shell>
+      <header slot="header">
+        <h1>
+          2022 Esri Developer Summit: Building Web Apps with ArcGIS API for
+          JavaScript and Calcite Design System
+        </h1>
+      </header>
+      <!-- Calcite shell panel -->
+      <calcite-shell-panel slot="primary-panel" position="start">
+        <!-- Calcite panel -->
+        <calcite-panel>
+          <div id="content">
+            <!-- Calcite inputs -->
+            <calcite-label>
+              <span>Button</span>
+              <calcite-button id="launchBtn">Open modal</calcite-button>
+              <calcite-button appearance="outline">Outline</calcite-button>
+            </calcite-label>
+
+            <calcite-label
+              alignment="start"
+              status="idle"
+              scale="m"
+              layout="default"
+            >
+              Radio Group
+              <calcite-radio-group
+                role="radiogroup"
+                appearance="solid"
+                layout="horizontal"
+                scale="m"
+                width="auto"
+              >
+                <calcite-radio-group-item
+                  value="react"
+                  checked=""
+                  tabindex="0"
+                  aria-checked="true"
+                  role="radio"
+                  icon-position="start"
+                >
+                  One
+                </calcite-radio-group-item>
+                <calcite-radio-group-item
+                  value="ember"
+                  tabindex="-1"
+                  aria-checked="false"
+                  role="radio"
+                  icon-position="start"
+                >
+                  Two
+                </calcite-radio-group-item>
+                <calcite-radio-group-item
+                  value="angular"
+                  tabindex="-1"
+                  aria-checked="false"
+                  role="radio"
+                  icon-position="start"
+                >
+                  Three
+                </calcite-radio-group-item>
+                <calcite-radio-group-item
+                  value="vue"
+                  tabindex="-1"
+                  aria-checked="false"
+                  role="radio"
+                  icon-position="start"
+                >
+                  Four
+                </calcite-radio-group-item>
+              </calcite-radio-group>
+            </calcite-label>
+            <calcite-label layout="inline">
+              <span>Switch</span>
+              <calcite-switch checked />
+            </calcite-label>
+            <!-- Calcite icons -->
+            <div>
+              <calcite-icon scale="m" icon="lightbulb"></calcite-icon>
+              <calcite-icon scale="m" icon="map"></calcite-icon>
+              <calcite-icon scale="m" icon="check"></calcite-icon>
+              <calcite-icon scale="m" icon="information-f"></calcite-icon>
+              <calcite-icon scale="m" icon="play"></calcite-icon>
+            </div>
+          </div>
+        </calcite-panel>
+      </calcite-shell-panel>
+      <!-- Map view container -->
+      <div id="viewDiv"></div>
+    </calcite-shell>
+    <!-- Calcite modal -->
+    <!-- intl-close="Cerca" -->
+    <calcite-modal aria-labelledby="modal-title">
+      <div slot="header" id="modal-title">Title</div>
+      <div slot="content">Content</div>
+      <calcite-button
+        id="cancelBtn"
+        slot="secondary"
+        width="full"
+        appearance="outline"
+        >Cancel</calcite-button
+      >
+      <calcite-button id="confirmBtn" slot="primary" width="full"
+        >Confirm</calcite-button
+      >
+    </calcite-modal>
+    <script type="module" src="/src/app/init.ts"></script>
+  </body>
+</html>

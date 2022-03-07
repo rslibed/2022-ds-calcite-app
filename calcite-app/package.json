@@ -4,17 +4,15 @@
   "author": "Ryan Libed",
   "version": "0.0.1",
   "scripts": {
-    "start": "npm run copy && vite",
-    "copy": "ncp ./node_modules/@esri/calcite-components/dist/calcite/assets ./public/assets",
-    "build": "npm run copy && tsc && vite build",
+    "start": "vite",
+    "build": "tsc && vite build",
     "serve": "vite preview"
   },
   "dependencies": {
     "@arcgis/core": "^4.22.0",
-    "@esri/calcite-components": "1.0.0-beta.69"
+    "@esri/calcite-components": "^1.0.0-beta.69"
   },
   "devDependencies": {
-    "ncp": "^2.0.0",
     "rollup-plugin-copy": "^3.4.0",
     "typescript": "^4.3.2",
     "vite": "^2.6.14",

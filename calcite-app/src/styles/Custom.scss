@@ -1,0 +1,12 @@
+.custom-theme {
+  calcite-button,
+  calcite-switch,
+  calcite-radio-group-item {
+    --calcite-ui-brand: #b3995d;
+    --calcite-ui-brand-hover: #8f7a4a;
+  }
+
+  calcite-icon {
+    --calcite-ui-icon-color: #aa0000;
+  }
+}
